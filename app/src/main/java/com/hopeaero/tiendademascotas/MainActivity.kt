@@ -1,9 +1,12 @@
 package com.hopeaero.tiendademascotas
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.hopeaero.tiendademascotas.adapter.PetAdapter
+import com.hopeaero.tiendademascotas.adapter.PetItem
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -18,6 +21,10 @@ class MainActivity : AppCompatActivity() {
             PetItem("Todo para tu mascota", "Encuentra los mejores productos y consejos para mantener a tu mascota sana, feliz y consentida.", R.drawable.products)
         )
 
-        recyclerView.adapter = PetAdapter(petList)
+        recyclerView.adapter = PetAdapter(petList) { petItem ->
+            val intent = Intent(this, DetailActivityPets::class.java)
+            intent.putExtra("petTitle", petItem.title)
+            startActivity(intent)
+        }
     }
 }
