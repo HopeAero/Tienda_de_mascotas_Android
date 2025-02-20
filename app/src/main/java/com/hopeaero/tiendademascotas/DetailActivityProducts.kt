@@ -5,16 +5,16 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.tabs.TabLayout
-import com.hopeaero.tiendademascotas.adapter.AdoptAdapter
+import com.hopeaero.tiendademascotas.adapter.ProductItem
+import com.hopeaero.tiendademascotas.adapter.ProductsAdapter
 
-
-class DetailActivityPets : AppCompatActivity() {
+class DetailActivityProducts : AppCompatActivity() {
     private lateinit var recyclerView: RecyclerView
     private lateinit var tabLayout: TabLayout
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_detail_pets)
+        setContentView(R.layout.activity_detail_products)
 
         recyclerView = findViewById(R.id.recycler_view)
         tabLayout = findViewById(R.id.tabLayout)
@@ -24,20 +24,23 @@ class DetailActivityPets : AppCompatActivity() {
     }
 
     private fun setupTabLayout() {
-        tabLayout.addTab(tabLayout.newTab().setText("Perros"))
-        tabLayout.addTab(tabLayout.newTab().setText("Gatos"))
-        tabLayout.addTab(tabLayout.newTab().setText("Conejos"))
+        tabLayout.addTab(tabLayout.newTab().setText("Cuidados Básicos"))
+        tabLayout.addTab(tabLayout.newTab().setText("Artículos"))
     }
 
     private fun setupRecyclerView() {
         recyclerView.layoutManager = LinearLayoutManager(this)
-        val pets = listOf(
-            Pet("Nombre perro", "Raza | Edad", R.drawable.dog),
-            Pet("Nombre perro", "Raza | Edad", R.drawable.dog_2),
-            Pet("Nombre perro", "Raza | Edad", R.drawable.dog_3)
+        val products = listOf(
+            ProductItem("Perros", R.drawable.dog),
+            ProductItem("Gatos", R.drawable.dog_2),
+            ProductItem("Conejos", R.drawable.dog_3)
         )
 
-        val adapter = AdoptAdapter(pets)
+        val adapter = ProductsAdapter(products) { product ->
+            // Handle item click
+        }
         recyclerView.adapter = adapter
+
+
     }
 }

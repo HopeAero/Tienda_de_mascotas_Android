@@ -22,9 +22,18 @@ class MainActivity : AppCompatActivity() {
         )
 
         recyclerView.adapter = PetAdapter(petList) { petItem ->
-            val intent = Intent(this, DetailActivityPets::class.java)
-            intent.putExtra("petTitle", petItem.title)
-            startActivity(intent)
+
+            if (petItem.title == "Adopta un amigo") {
+                val intent = Intent(this, DetailActivityPets::class.java)
+                intent.putExtra("petTitle", petItem.title)
+                startActivity(intent)
+            } else if (petItem.title == "Todo para tu mascota") {
+                val intent = Intent(this, DetailActivityProducts::class.java)
+                intent.putExtra("petTitle", petItem.title)
+                startActivity(intent)
+            }
+
+
         }
     }
 }
