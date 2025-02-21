@@ -67,4 +67,14 @@
         android:layout_height="wrap_content"
         android:padding="16dp" />
 
+    <ImageView
+        android:id="@+id/gallery"
+        android:layout_width="match_parent"
+        android:layout_height="96dp"
+        android:baselineAligned="false"
+        android:paddingTop="8dp"
+        android:src="@drawable/gallery"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
 </LinearLayout>
