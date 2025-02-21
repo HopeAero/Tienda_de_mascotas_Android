@@ -26,6 +26,13 @@ class DetailActivityPets : AppCompatActivity() {
 
         setupTabLayout()
         setupRecyclerView()
+
+        recyclerView.setOnClickListener {
+            val intent = Intent(this, PetGalleryActivity::class.java)
+            startActivity(intent)
+
+        }
+
     }
 
     private fun setupTabLayout() {
@@ -56,9 +63,9 @@ class DetailActivityPets : AppCompatActivity() {
     private fun setupRecyclerView() {
         recyclerView.layoutManager = LinearLayoutManager(this)
         adapter = AdoptAdapter(dogs, { pet ->
-            /*val intent = Intent(this, DetailActivityProducts::class.java)
+             intent = Intent(this, PetGalleryActivity::class.java)
             intent.putExtra("petId", pet.id)
-            startActivity(intent)*/
+            startActivity(intent)
         })
         recyclerView.adapter = adapter
     }
