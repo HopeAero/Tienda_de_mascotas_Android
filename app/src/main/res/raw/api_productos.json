@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "nombre": "Comida para perros",
+    "precio": 29.99,
+    "descripcion": "Alimento balanceado para perros de todas las razas, rico en proteínas y nutrientes.",
+    "imagen": "https://oechsle.vteximg.com.br/arquivos/ids/1210949/image-b67367a7621b407ba24dc4d9c2c2c6d1.jpg?v=637494289530370000"
+  },
+  {
+    "id": 2,
+    "nombre": "Arena para gatos",
+    "precio": 15.50,
+    "descripcion": "Arena de alta calidad que controla olores y se aglomera fácilmente.",
+    "imagen": "https://melopetandgarden.com/cdn/shop/files/catsprodenatural10lb.jpg?v=1701532720"
+  },
+  {
+    "id": 3,
+    "nombre": "Juguete para masticar",
+    "precio": 8.99,
+    "descripcion": "Juguete duradero para perros, ideal para masticar y jugar.",
+    "imagen": "https://storage.googleapis.com/catalog-pictures-carrefour-es/catalog/pictures/hd_510x_/6377136317321_1.jpg"
+  },
+  {
+    "id": 4,
+    "nombre": "Cama ortopédica para perros",
+    "precio": 49.99,
+    "descripcion": "Cama cómoda y ortopédica para el descanso de tu mascota.",
+    "imagen": "https://es.petsupportsystems.com/cdn/shop/files/833825005161_PT3.jpg?v=1719011292&width=1946"
+  },
+  {
+    "id": 5,
+    "nombre": "Collar reflectante para gatos",
+    "precio": 12.00,
+    "descripcion": "Collar ajustable y reflectante para mayor seguridad en la noche.",
+    "imagen": "https://www.icasa.com/wp-content/uploads/2024/04/clk220-collar-reflectante-safe-here-para-gatos_detalle_9641.jpg"
+  },
+  {
+    "id": 6,
+    "nombre": "Snacks naturales para perros",
+    "precio": 10.50,
+    "descripcion": "Deliciosos y saludables snacks hechos con ingredientes naturales.",
+    "imagen": "https://pxmshare.colgatepalmolive.com/JPEG_1000/JeYM4Wy7IH7dSNlPXmTmc.jpg"
+  },
+  {
+    "id": 7,
+    "nombre": "Transportadora para mascotas",
+    "precio": 39.99,
+    "descripcion": "Transportadora segura y cómoda para llevar a tu mascota a cualquier lugar.",
+    "imagen": "https://i5.walmartimages.com.mx/mg/gm/1p/images/product-images/img_large/00802296703898l.jpg"
+  },
+  {
+    "id": 8,
+    "nombre": "Pelota de tenis para perros",
+    "precio": 5.99,
+    "descripcion": "Pelota de tenis resistente, ideal para jugar y hacer ejercicio.",
+    "imagen": "https://assets.petco.com/petco/image/upload/f_auto,q_auto/2762965-center-1"
+  }
+]

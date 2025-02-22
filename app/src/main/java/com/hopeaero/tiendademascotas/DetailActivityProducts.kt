@@ -5,8 +5,10 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.tabs.TabLayout
+import com.google.gson.Gson
 import com.hopeaero.tiendademascotas.adapter.ProductItem
 import com.hopeaero.tiendademascotas.adapter.ProductsAdapter
+import com.hopeaero.tiendademascotas.model.Producto
 
 class DetailActivityProducts : AppCompatActivity() {
     private lateinit var recyclerView: RecyclerView
@@ -29,18 +31,22 @@ class DetailActivityProducts : AppCompatActivity() {
     }
 
     private fun setupRecyclerView() {
+        val jsonString = resources.openRawResource(R.raw.api_productos).bufferedReader().use { it.readText() }
+        val gson = Gson()
+        val productos: List<Producto> = gson.fromJson(jsonString, Array<Producto>::class.java).toList()
+
         recyclerView.layoutManager = LinearLayoutManager(this)
-        val products = listOf(
-            ProductItem("Perros", R.drawable.dog),
-            ProductItem("Gatos", R.drawable.dog_2),
-            ProductItem("Conejos", R.drawable.dog_3)
-        )
-
-        val adapter = ProductsAdapter(products) { product ->
-            // Handle item click
+        val products = productos.map { producto ->
+            ProductItem(
+                producto.nombre,
+                producto.descripcion,
+                producto.precio.toString(),
+                producto.imagen
+            )
         }
-        recyclerView.adapter = adapter
 
+        val adapter = ProductsAdapter(products)
+        recyclerView.adapter = adapter
 
     }
 }
