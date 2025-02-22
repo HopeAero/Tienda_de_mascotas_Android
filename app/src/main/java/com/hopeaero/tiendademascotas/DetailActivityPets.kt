@@ -65,6 +65,7 @@ class DetailActivityPets : AppCompatActivity() {
         adapter = AdoptAdapter(dogs, { pet ->
              intent = Intent(this, PetGalleryActivity::class.java)
             intent.putExtra("petId", pet.id)
+            intent.putExtra("petAnimal", pet.animal)
             startActivity(intent)
         })
         recyclerView.adapter = adapter
@@ -72,9 +73,10 @@ class DetailActivityPets : AppCompatActivity() {
 
     private fun updateRecyclerView(tabName: String) {
         val newOnItemClick: (Pet) -> Unit = { pet ->
-            /*val intent = Intent(this, DetailActivityProducts::class.java)
+            val intent = Intent(this, PetGalleryActivity::class.java)
             intent.putExtra("petId", pet.id)
-            startActivity(intent)*/
+            intent.putExtra("petAnimal", pet.animal)
+            startActivity(intent)
         }
 
         if (tabName == "Perros") {

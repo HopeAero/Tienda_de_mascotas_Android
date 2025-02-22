@@ -1,80 +1,173 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:fillViewport="true"> <!-- Ensure the ScrollView fills the screen -->
 
-    <ImageView
-        android:layout_width="193dp"
-        android:layout_height="92dp"
-        android:baselineAligned="false"
-        android:src="@drawable/logo" />
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="match_parent"
-        android:layout_height="168dp"
-        android:background="#A8DADC"
-        android:gravity="center">
-
-
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="210dp"
-            android:layout_height="94dp"
-            android:layout_marginEnd="148dp"
-            android:layout_marginBottom="16dp"
-            android:baselineAligned="false"
-            android:fontFamily="@font/inter"
-            android:paddingTop="8dp"
-            android:text="Adopta a un amigo"
-            android:textColor="#1D3557"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.637" />
-
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="194dp"
-            android:layout_height="139dp"
-            android:layout_marginEnd="28dp"
-            android:src="@drawable/adopt"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.517" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <ImageView
-        android:id="@+id/backButton"
-        android:layout_width="wrap_content"
-        android:layout_height="96dp"
-        android:baselineAligned="false"
-        android:paddingTop="8dp"
-        android:src="@drawable/perros_button"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="16dp" />
+        android:orientation="vertical">
 
-    <ImageView
-        android:id="@+id/gallery"
-        android:layout_width="match_parent"
-        android:layout_height="96dp"
-        android:baselineAligned="false"
-        android:paddingTop="8dp"
-        android:src="@drawable/gallery"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        <!-- Logo ImageView -->
+        <ImageView
+            android:layout_width="193dp"
+            android:layout_height="92dp"
+            android:baselineAligned="false"
+            android:src="@drawable/logo" />
 
-</LinearLayout>
+        <!-- ConstraintLayout with Text and Image -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="168dp"
+            android:background="#A8DADC"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="210dp"
+                android:layout_height="94dp"
+                android:layout_marginEnd="148dp"
+                android:layout_marginBottom="16dp"
+                android:baselineAligned="false"
+                android:fontFamily="@font/inter"
+                android:paddingTop="8dp"
+                android:text="Adopta a un amigo"
+                android:textColor="#1D3557"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.637" />
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="194dp"
+                android:layout_height="139dp"
+                android:layout_marginEnd="28dp"
+                android:src="@drawable/adopt"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.517" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- Back Button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/backButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Perros"
+            android:gravity="center"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#1D3557"
+            android:padding="8dp"
+            android:layout_marginStart="10dp"
+            android:layout_margin="8dp"/>
+
+        <!-- CardView for Dog Details -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="4dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <!-- Blue Background -->
+                <View
+                    android:id="@+id/viewBackground"
+                    android:layout_width="0dp"
+                    android:layout_height="150dp"
+                    android:background="#457B9D"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+                <!-- Dog Image -->
+                <ImageView
+                    android:id="@+id/imageViewDog"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/dog"
+                    app:layout_constraintTop_toTopOf="@id/viewBackground"
+                    app:layout_constraintBottom_toBottomOf="@id/viewBackground"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+                <!-- Dog Name -->
+                <TextView
+                    android:id="@+id/textViewName"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:text="Nombre: XX"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintTop_toBottomOf="@id/viewBackground"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+                <!-- Dog Breed -->
+                <TextView
+                    android:id="@+id/textViewBreed"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:text="Raza: xx"
+                    app:layout_constraintTop_toBottomOf="@id/textViewName"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+                <!-- Dog Age -->
+                <TextView
+                    android:id="@+id/textViewAge"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:text="Edad: xx años"
+                    app:layout_constraintTop_toBottomOf="@id/textViewBreed"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+                <!-- Dog Description -->
+                <TextView
+                    android:id="@+id/textViewDescription"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:text="[Descripción del perro] Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+                    app:layout_constraintTop_toBottomOf="@id/textViewAge"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Gallery ImageView -->
+        <ImageView
+            android:id="@+id/gallery"
+            android:layout_width="match_parent"
+            android:layout_height="96dp"
+            android:baselineAligned="false"
+            android:paddingTop="8dp"
+            android:src="@drawable/gallery"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- ViewPager2 for Gallery -->
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="300dp" /> <!-- Set a fixed height or wrap_content as needed -->
+    </LinearLayout>
+</ScrollView>
