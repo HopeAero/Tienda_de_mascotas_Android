@@ -8,14 +8,17 @@
     <application
         android:allowBackup="true"
         android:icon="@drawable/dog"
-        android:label="@string/app_name"
+        android:label="PetStore"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApp.NoActionBar">
         <activity
-            android:name=".DetailActivityPets"
-            android:theme="@style/Theme.MyApp.NoActionBar"
+            android:name=".PetGalleryActivity"
             android:exported="false" />
+        <activity
+            android:name=".DetailActivityPets"
+            android:exported="false"
+            android:theme="@style/Theme.MyApp.NoActionBar" />
         <activity
             android:name=".MainActivity"
             android:exported="true"
@@ -28,8 +31,7 @@
         </activity>
         <activity
             android:name=".DetailActivityProducts"
-            android:exported="false">
-        </activity>
+            android:exported="false"></activity>
     </application>
 
 </manifest>

@@ -9,19 +9,19 @@ app:cardElevation="4dp">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="115dp"
         android:orientation="horizontal"
         android:padding="8dp">
 
         <ImageView
             android:id="@+id/pet_image"
-            android:layout_width="64dp"
-            android:layout_height="64dp"
-            android:layout_marginEnd="16dp"/>
+            android:layout_width="144dp"
+            android:layout_height="98dp"
+            android:layout_marginEnd="16dp" />
 
         <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_width="239dp"
+            android:layout_height="96dp"
             android:layout_weight="1"
             android:orientation="vertical">
 
@@ -30,8 +30,8 @@ app:cardElevation="4dp">
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="#1D3557"
-                android:textStyle="bold"
-                android:textSize="18sp" />
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/pet_details"
@@ -43,12 +43,13 @@ app:cardElevation="4dp">
 
         <ImageView
             android:id="@+id/imgArrow"
-            android:layout_width="36dp"
-            android:layout_height="36dp"
-            android:layout_gravity="end"
+            android:layout_width="wrap_content"
+            android:layout_height="96dp"
             android:baselineAligned="false"
             android:paddingTop="8dp"
-            android:src="@drawable/red_arrow" />
+            android:src="@drawable/red_arrow"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
     </LinearLayout>
 
 </androidx.cardview.widget.CardView>
